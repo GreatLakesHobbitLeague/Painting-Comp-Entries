@@ -1,6 +1,6 @@
 
 // https://nuxt.com/docs/api/configuration/nuxt-config
-export default defineNuxtConfig({
+export default {
   devtools: { enabled: true },
   css: ['~/assets/css/main.css'],
   
@@ -9,7 +9,12 @@ export default defineNuxtConfig({
       tailwindcss: {},
       autoprefixer: {},
     },
+    generate:{
+      nojekyll: true, //not working on this version
+    },
+    ssr: true, //server side rendered enabled //When true
+    target: "static", // and static, nuxt generates a hybrid static site
   },
-})
+}
 // nuxt.config.js
 
